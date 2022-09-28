@@ -15,3 +15,14 @@ VALUES
 ('Sales Lead', 90000, 3),
 ('Project Manager', 100000, 4),
 ('Operations Manager', 90000, 4);
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES 
+('Miller', 'DiCarlo', 2, null),
+('David', 'Barker', 1, 1),
+('Catherine', 'Ross', 4, null),
+('Samantha', 'Craig', 3, 3),
+('Veronica', 'Clayberg', 6, null),
+('Mackenzie', 'Gray', 5, 5),
+('Eric', 'Bonilla', 7, null),
+('Jacob', 'Webber', 8, 7);
