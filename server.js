@@ -14,3 +14,9 @@ const connection = mysql.createConnection({
     password: process.env.MYSQL_PASSWORD,
     database: 'employee_db'
   });
+
+  connection.connect(err => {
+    if (err) throw err;
+    console.log('connected as id ' + connection.threadId);
+    afterConnection();
+  });
