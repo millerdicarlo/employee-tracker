@@ -115,7 +115,7 @@ const promptUser = () => {
 });
 };
 
-// function to show all departments 
+// function: show all departments 
 showDepartments = () => {
   console.log('Showing all departments...\n');
   const sql = `SELECT department.id AS id, department.name AS department FROM department`; 
@@ -127,7 +127,7 @@ showDepartments = () => {
   });
 };
 
-// function to show all roles 
+// function: show all roles 
 showRoles = () => {
   console.log('Showing all roles...\n');
 
@@ -142,7 +142,7 @@ showRoles = () => {
   })
 };
 
-// function to show all employees 
+// function: show all employees 
 showEmployees = () => {
   console.log('Showing all employees...\n'); 
   const sql = `SELECT employee.id, 
@@ -164,7 +164,7 @@ showEmployees = () => {
   });
 };
 
-// function to add a department 
+// function: add a department 
 addDepartment = () => {
   inquirer.prompt([
     {
@@ -193,7 +193,7 @@ addDepartment = () => {
   });
 };
 
-// function to add a role 
+// function: add a role 
 addRole = () => {
   inquirer.prompt([
     {
@@ -260,7 +260,7 @@ addRole = () => {
  });
 };
 
-// function to add an employee 
+// function: add an employee 
 addEmployee = () => {
   inquirer.prompt([
     {
@@ -350,7 +350,7 @@ addEmployee = () => {
   });
 };
 
-// function to update an employee 
+// function: update an employee 
 updateEmployee = () => {
   // get employees from employee table 
   const employeeSql = `SELECT * FROM employee`;
@@ -413,7 +413,7 @@ updateEmployee = () => {
   });
 };
 
-// function to update a manager/employee 
+// function: update a manager/employee 
 updateManager = () => {
   // get employees from employee table 
   const employeeSql = `SELECT * FROM employee`;
@@ -474,4 +474,21 @@ updateManager = () => {
       });
     });
   });
+};
+
+// function: view employee by department
+employeeDepartment = () => {
+  console.log('Showing employee by departments...\n');
+  const sql = `SELECT employee.first_name, 
+                      employee.last_name, 
+                      department.name AS department
+               FROM employee 
+               LEFT JOIN role ON employee.role_id = role.id 
+               LEFT JOIN department ON role.department_id = department.id`;
+
+  connection.promise().query(sql, (err, rows) => {
+    if (err) throw err; 
+    console.table(rows); 
+    promptUser();
+  });          
 };
