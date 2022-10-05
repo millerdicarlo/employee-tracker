@@ -587,3 +587,5 @@ deleteEmployee = () => {
   });
  });
 };
+
+// ADD FUNCTION to view department budget
