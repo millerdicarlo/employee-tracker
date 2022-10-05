@@ -8,6 +8,7 @@ This application allows users to manage a company's emplyee database. Users can 
 * MySQL
 * JavaScript
 * Inquirer
+* Express.js
 
 # Website
 https://desolate-hollows-70629.herokuapp.com/

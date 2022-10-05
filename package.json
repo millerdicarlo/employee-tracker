@@ -1,7 +1,7 @@
 {
   "name": "12-employee-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application allows users to manage a company's emplyee database. Users can view, edit, and delete employees (nd their roles with-in the company).",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/millerdicarlo/employee-tracker#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "express": "^4.18.1",
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^29.1.2"
   }
 }
