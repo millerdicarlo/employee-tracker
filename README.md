@@ -13,5 +13,8 @@ This application allows users to manage a company's emplyee database. Users can 
 # Website
 https://desolate-hollows-70629.herokuapp.com/
 
+# GitHub Link
+https://github.com/millerdicarlo/employee-tracker.git
+
 ## Contribution
 Made by Miller DiCarlo

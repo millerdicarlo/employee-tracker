@@ -1,5 +1,5 @@
-// import mysql2 (ADDED semicolon)
-//const mysql = require('mysql2');
+// import mysql2
+const mysql = require('mysql2');
 //import express
 const express = require('express');
 // import inquirer 
@@ -15,6 +15,10 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+db.query(`SELECT * FROM employee`, (err, rows) => {
+  console.log(rows);
+});
+
 // Default response for any other request (Not Found)
 app.use((req, res) => {
   res.status(404).end();
@@ -25,12 +29,24 @@ app.listen(PORT, () => {
 });
 
 
+// Connect to database
+const db = mysql.createConnection(
+  {
+    host: 'localhost',
+    // Your MySQL username,
+    user: 'root',
+    // Your MySQL password
+    password: 'Mill3r@nn12!',
+    database: 'employee_db'
+  },
+  console.log('Connected to employee database.')
+);
 
 
+
+//EXAMPLE CODE FOUND TO COMPARE TO FOR BUG
 /*
-
 require('dotenv').config()
-
 // connection to database
 const connection = mysql.createConnection({
     host: 'localhost',
